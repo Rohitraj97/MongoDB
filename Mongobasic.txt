@@ -1,0 +1,1384 @@
+
+> use assignments
+switched to db assignments
+> show collections
+users
+> db.createCollection("users")
+{
+        "ok" : 0,
+        "errmsg" : "Collection already exists. NS: assignments.users",
+        "code" : 48,
+        "codeName" : "NamespaceExists"
+}
+> db.createCollection("Users")
+{ "ok" : 1 }
+> db.Users.insertMany([{"first_name":"Rohit","last_name":"sharma","email":"roh123","ip_address":"120.74.55","age":21}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62276e373094be93b88ea32e")
+        ]
+}
+> db.Users.find({})
+{ "_id" : ObjectId("62276e373094be93b88ea32e"), "first_name" : "Rohit", "last_name" : "sharma", "email" : "roh123", "ip_address" : "120.74.55", "age" : 21 }
+> db.Users.insertMany([{"first_name":"sikhart","last_name":"dhawan","email":"dhawan123","ip_address":"1374.775","age":35}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62276ed73094be93b88ea32f")
+        ]
+}
+> db.Users.find({})
+{ "_id" : ObjectId("62276e373094be93b88ea32e"), "first_name" : "Rohit", "last_name" : "sharma", "email" : "roh123", "ip_address" : "120.74.55", "age" : 21 }
+{ "_id" : ObjectId("62276ed73094be93b88ea32f"), "first_name" : "sikhart", "last_name" : "dhawan", "email" : "dhawan123", "ip_address" : "1374.775", "age" : 35 }
+> db.Users.insertMany([{"first_name":"Virat","last_name":"kohli","email":"kohli123","ip_address":"1074.005","age":38}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62276f2b3094be93b88ea330")
+        ]
+}
+> db.Users.find({})
+{ "_id" : ObjectId("62276e373094be93b88ea32e"), "first_name" : "Rohit", "last_name" : "sharma", "email" : "roh123", "ip_address" : "120.74.55", "age" : 21 }
+{ "_id" : ObjectId("62276ed73094be93b88ea32f"), "first_name" : "sikhart", "last_name" : "dhawan", "email" : "dhawan123", "ip_address" : "1374.775", "age" : 35 }
+{ "_id" : ObjectId("62276f2b3094be93b88ea330"), "first_name" : "Virat", "last_name" : "kohli", "email" : "kohli123", "ip_address" : "1074.005", "age" : 38 }
+> db.Users.insertMany([{"first_name":"suryakumar","last_name":"yadavi","email":"yadav123","ip_address":"974.005","age":25}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62276f663094be93b88ea331")
+        ]
+}
+> db.Users.find({})
+{ "_id" : ObjectId("62276e373094be93b88ea32e"), "first_name" : "Rohit", "last_name" : "sharma", "email" : "roh123", "ip_address" : "120.74.55", "age" : 21 }
+{ "_id" : ObjectId("62276ed73094be93b88ea32f"), "first_name" : "sikhart", "last_name" : "dhawan", "email" : "dhawan123", "ip_address" : "1374.775", "age" : 35 }
+{ "_id" : ObjectId("62276f2b3094be93b88ea330"), "first_name" : "Virat", "last_name" : "kohli", "email" : "kohli123", "ip_address" : "1074.005", "age" : 38 }
+{ "_id" : ObjectId("62276f663094be93b88ea331"), "first_name" : "suryakumar", "last_name" : "yadavi", "email" : "yadav123", "ip_address" : "974.005", "age" : 25 }
+> db.Users.insertMany([{"first_name":"shreyash","last_name":"ayer","email":"ayer123","ip_address":"9974.005","age":25}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62276fa33094be93b88ea332")
+        ]
+}
+> db.Users.find({})
+{ "_id" : ObjectId("62276e373094be93b88ea32e"), "first_name" : "Rohit", "last_name" : "sharma", "email" : "roh123", "ip_address" : "120.74.55", "age" : 21 }
+{ "_id" : ObjectId("62276ed73094be93b88ea32f"), "first_name" : "sikhart", "last_name" : "dhawan", "email" : "dhawan123", "ip_address" : "1374.775", "age" : 35 }
+{ "_id" : ObjectId("62276f2b3094be93b88ea330"), "first_name" : "Virat", "last_name" : "kohli", "email" : "kohli123", "ip_address" : "1074.005", "age" : 38 }
+{ "_id" : ObjectId("62276f663094be93b88ea331"), "first_name" : "suryakumar", "last_name" : "yadavi", "email" : "yadav123", "ip_address" : "974.005", "age" : 25 }
+{ "_id" : ObjectId("62276fa33094be93b88ea332"), "first_name" : "shreyash", "last_name" : "ayer", "email" : "ayer123", "ip_address" : "9974.005", "age" : 25 }
+> db.Users.find({"age":25})
+{ "_id" : ObjectId("62276f663094be93b88ea331"), "first_name" : "suryakumar", "last_name" : "yadavi", "email" : "yadav123", "ip_address" : "974.005", "age" : 25 }
+{ "_id" : ObjectId("62276fa33094be93b88ea332"), "first_name" : "shreyash", "last_name" : "ayer", "email" : "ayer123", "ip_address" : "9974.005", "age" : 25 }
+> db.Users.find({}).pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276fa33094be93b88ea332"),
+        "first_name" : "shreyash",
+        "last_name" : "ayer",
+        "email" : "ayer123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+> db.Users.insertMany([{"first_name":"Ravindra","last_name":"jadeja","email":"jadeja123","ip_address":"45974.005","age":35}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("622770413094be93b88ea333")
+        ]
+}
+> db.Users.find({}).pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276fa33094be93b88ea332"),
+        "first_name" : "shreyash",
+        "last_name" : "ayer",
+        "email" : "ayer123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+> db.Users.find({"first_name":"Ravindra"}).pretty()
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+> db.Users.insertMany([{"first_name":"Bhuneshwar","last_name":"kumara","email":"kumar123","ip_address":"09074.005","age":27}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("622770b03094be93b88ea334")
+        ]
+}
+> db.Users.find.one({"age":25})
+uncaught exception: TypeError: db.Users.find.one is not a function :
+@(shell):1:1
+> db.Users.find.One({"age":25})
+uncaught exception: TypeError: db.Users.find.One is not a function :
+@(shell):1:1
+> db.Users.findOne({"age":25})
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 25
+}
+> db.Users.insertMany([{"first_name":"Ravi","last_name":"bishnoi","email":"Bishnoi123","ip_address":"174.005","age":22}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("622771793094be93b88ea335")
+        ]
+}
+> db.Users.find.One({"age":25})
+uncaught exception: TypeError: db.Users.find.One is not a function :
+@(shell):1:1
+> db.Users.findOne({"age":25})
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 25
+}
+> db.Users.find({}).pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276fa33094be93b88ea332"),
+        "first_name" : "shreyash",
+        "last_name" : "ayer",
+        "email" : "ayer123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+> db.Users.insertMany([{"first_name":"Mohammad","last_name":"shami","email":"shami123","ip_address":"9974.005","age":25}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("622771b93094be93b88ea336")
+        ]
+}
+> db.Users.find({}).pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276fa33094be93b88ea332"),
+        "first_name" : "shreyash",
+        "last_name" : "ayer",
+        "email" : "ayer123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("622771b93094be93b88ea336"),
+        "first_name" : "Mohammad",
+        "last_name" : "shami",
+        "email" : "shami123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+> db.Users.insert({"first_name":"mohammad"},{"last_name":"siraj"})
+WriteResult({ "nInserted" : 1 })
+> db.Users.find({}).pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276fa33094be93b88ea332"),
+        "first_name" : "shreyash",
+        "last_name" : "ayer",
+        "email" : "ayer123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("622771b93094be93b88ea336"),
+        "first_name" : "Mohammad",
+        "last_name" : "shami",
+        "email" : "shami123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{ "_id" : ObjectId("6227727d3094be93b88ea337"), "first_name" : "mohammad" }
+> db.Users.insert({"last_name":"siraj"})
+WriteResult({ "nInserted" : 1 })
+> db.Users.find({}).pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276fa33094be93b88ea332"),
+        "first_name" : "shreyash",
+        "last_name" : "ayer",
+        "email" : "ayer123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("622771b93094be93b88ea336"),
+        "first_name" : "Mohammad",
+        "last_name" : "shami",
+        "email" : "shami123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{ "_id" : ObjectId("6227727d3094be93b88ea337"), "first_name" : "mohammad" }
+{ "_id" : ObjectId("6227729c3094be93b88ea338"), "last_name" : "siraj" }
+> db.Users.insertMany(["email":"siraj123","ip_address":"0004.005","age":29}])
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:28
+> db.Users.insertMany([{"email":"siraj123","ip_address":"0004.005","age":29}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("622773043094be93b88ea339")
+        ]
+}
+> db.Users.find({}).pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276fa33094be93b88ea332"),
+        "first_name" : "shreyash",
+        "last_name" : "ayer",
+        "email" : "ayer123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("622771b93094be93b88ea336"),
+        "first_name" : "Mohammad",
+        "last_name" : "shami",
+        "email" : "shami123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{ "_id" : ObjectId("6227727d3094be93b88ea337"), "first_name" : "mohammad" }
+{ "_id" : ObjectId("6227729c3094be93b88ea338"), "last_name" : "siraj" }
+{
+        "_id" : ObjectId("622773043094be93b88ea339"),
+        "email" : "siraj123",
+        "ip_address" : "0004.005",
+        "age" : 29
+}
+> db.Users.findOne({"age":29})
+{
+        "_id" : ObjectId("622773043094be93b88ea339"),
+        "email" : "siraj123",
+        "ip_address" : "0004.005",
+        "age" : 29
+}
+> db.Users.findOne({"first_name":"Mohammad"})
+{
+        "_id" : ObjectId("622771b93094be93b88ea336"),
+        "first_name" : "Mohammad",
+        "last_name" : "shami",
+        "email" : "shami123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+> db.Users.find().pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276fa33094be93b88ea332"),
+        "first_name" : "shreyash",
+        "last_name" : "ayer",
+        "email" : "ayer123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("622771b93094be93b88ea336"),
+        "first_name" : "Mohammad",
+        "last_name" : "shami",
+        "email" : "shami123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{ "_id" : ObjectId("6227727d3094be93b88ea337"), "first_name" : "mohammad" }
+{ "_id" : ObjectId("6227729c3094be93b88ea338"), "last_name" : "siraj" }
+{
+        "_id" : ObjectId("622773043094be93b88ea339"),
+        "email" : "siraj123",
+        "ip_address" : "0004.005",
+        "age" : 29
+}
+> db.Users.insertMany([{"first_name":"yuzvendra","last_name":chahal","email":"chahal123","ip_address":"1704.005","age":25}])
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:65
+> db.Users.insertMany([{"first_name":"yuzvendra","last_name":"chahal","email":"chahal123","ip_address":"1704.005","age":25}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("622774683094be93b88ea33a")
+        ]
+}
+> db.Users.find().pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276fa33094be93b88ea332"),
+        "first_name" : "shreyash",
+        "last_name" : "ayer",
+        "email" : "ayer123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("622771b93094be93b88ea336"),
+        "first_name" : "Mohammad",
+        "last_name" : "shami",
+        "email" : "shami123",
+        "ip_address" : "9974.005",
+        "age" : 25
+}
+{ "_id" : ObjectId("6227727d3094be93b88ea337"), "first_name" : "mohammad" }
+{ "_id" : ObjectId("6227729c3094be93b88ea338"), "last_name" : "siraj" }
+{
+        "_id" : ObjectId("622773043094be93b88ea339"),
+        "email" : "siraj123",
+        "ip_address" : "0004.005",
+        "age" : 29
+}
+{
+        "_id" : ObjectId("622774683094be93b88ea33a"),
+        "first_name" : "yuzvendra",
+        "last_name" : "chahal",
+        "email" : "chahal123",
+        "ip_address" : "1704.005",
+        "age" : 25
+}
+> db.Users.updateMany({"age":25},{$set:{"age":15}})
+{ "acknowledged" : true, "matchedCount" : 4, "modifiedCount" : 4 }
+> db.Users.find().pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 15
+}
+{
+        "_id" : ObjectId("62276fa33094be93b88ea332"),
+        "first_name" : "shreyash",
+        "last_name" : "ayer",
+        "email" : "ayer123",
+        "ip_address" : "9974.005",
+        "age" : 15
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("622771b93094be93b88ea336"),
+        "first_name" : "Mohammad",
+        "last_name" : "shami",
+        "email" : "shami123",
+        "ip_address" : "9974.005",
+        "age" : 15
+}
+{ "_id" : ObjectId("6227727d3094be93b88ea337"), "first_name" : "mohammad" }
+{ "_id" : ObjectId("6227729c3094be93b88ea338"), "last_name" : "siraj" }
+{
+        "_id" : ObjectId("622773043094be93b88ea339"),
+        "email" : "siraj123",
+        "ip_address" : "0004.005",
+        "age" : 29
+}
+{
+        "_id" : ObjectId("622774683094be93b88ea33a"),
+        "first_name" : "yuzvendra",
+        "last_name" : "chahal",
+        "email" : "chahal123",
+        "ip_address" : "1704.005",
+        "age" : 15
+}
+> db.Users.remove({"last_name":"chahal"})
+WriteResult({ "nRemoved" : 1 })
+> db.Users.find().pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("62276f663094be93b88ea331"),
+        "first_name" : "suryakumar",
+        "last_name" : "yadavi",
+        "email" : "yadav123",
+        "ip_address" : "974.005",
+        "age" : 15
+}
+{
+        "_id" : ObjectId("62276fa33094be93b88ea332"),
+        "first_name" : "shreyash",
+        "last_name" : "ayer",
+        "email" : "ayer123",
+        "ip_address" : "9974.005",
+        "age" : 15
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+{
+        "_id" : ObjectId("622771b93094be93b88ea336"),
+        "first_name" : "Mohammad",
+        "last_name" : "shami",
+        "email" : "shami123",
+        "ip_address" : "9974.005",
+        "age" : 15
+}
+{ "_id" : ObjectId("6227727d3094be93b88ea337"), "first_name" : "mohammad" }
+{ "_id" : ObjectId("6227729c3094be93b88ea338"), "last_name" : "siraj" }
+{
+        "_id" : ObjectId("622773043094be93b88ea339"),
+        "email" : "siraj123",
+        "ip_address" : "0004.005",
+        "age" : 29
+}
+> db.Users.removeMany({"age":15})
+uncaught exception: TypeError: db.Users.removeMany is not a function :
+@(shell):1:1
+> db.Users.deleteMany({"age":15})
+{ "acknowledged" : true, "deletedCount" : 3 }
+> db.Users.find().pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Ravindra",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+{ "_id" : ObjectId("6227727d3094be93b88ea337"), "first_name" : "mohammad" }
+{ "_id" : ObjectId("6227729c3094be93b88ea338"), "last_name" : "siraj" }
+{
+        "_id" : ObjectId("622773043094be93b88ea339"),
+        "email" : "siraj123",
+        "ip_address" : "0004.005",
+        "age" : 29
+}
+> db.Users.update({"first_name":"Ravindra"},{$set:{"jaddu"}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:56
+> db.Users.update({"first_name":"Ravindra"},{$set:{"first_name":"jaddu"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Users.find().pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "jaddu",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+{ "_id" : ObjectId("6227727d3094be93b88ea337"), "first_name" : "mohammad" }
+{ "_id" : ObjectId("6227729c3094be93b88ea338"), "last_name" : "siraj" }
+{
+        "_id" : ObjectId("622773043094be93b88ea339"),
+        "email" : "siraj123",
+        "ip_address" : "0004.005",
+        "age" : 29
+}
+> db.Users.update({"first_name":"jaddua"},{$set:{"first_name":"Sir Jadeja"}})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+>
+> db.Users.update({"first_name":"jaddu"},{$set:{"first_name":"Sir Jadeja"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Users.find().pretty()
+{
+        "_id" : ObjectId("62276e373094be93b88ea32e"),
+        "first_name" : "Rohit",
+        "last_name" : "sharma",
+        "email" : "roh123",
+        "ip_address" : "120.74.55",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276ed73094be93b88ea32f"),
+        "first_name" : "sikhart",
+        "last_name" : "dhawan",
+        "email" : "dhawan123",
+        "ip_address" : "1374.775",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("62276f2b3094be93b88ea330"),
+        "first_name" : "Virat",
+        "last_name" : "kohli",
+        "email" : "kohli123",
+        "ip_address" : "1074.005",
+        "age" : 38
+}
+{
+        "_id" : ObjectId("622770413094be93b88ea333"),
+        "first_name" : "Sir Jadeja",
+        "last_name" : "jadeja",
+        "email" : "jadeja123",
+        "ip_address" : "45974.005",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622770b03094be93b88ea334"),
+        "first_name" : "Bhuneshwar",
+        "last_name" : "kumara",
+        "email" : "kumar123",
+        "ip_address" : "09074.005",
+        "age" : 27
+}
+{
+        "_id" : ObjectId("622771793094be93b88ea335"),
+        "first_name" : "Ravi",
+        "last_name" : "bishnoi",
+        "email" : "Bishnoi123",
+        "ip_address" : "174.005",
+        "age" : 22
+}
+{ "_id" : ObjectId("6227727d3094be93b88ea337"), "first_name" : "mohammad" }
+{ "_id" : ObjectId("6227729c3094be93b88ea338"), "last_name" : "siraj" }
+{
+        "_id" : ObjectId("622773043094be93b88ea339"),
+        "email" : "siraj123",
+        "ip_address" : "0004.005",
+        "age" : 29
+}
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
